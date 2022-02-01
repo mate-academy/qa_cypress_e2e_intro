@@ -29,40 +29,33 @@ Write your second test:
 1. Assert your username appeared in site navigation (header) menu.
 
 To install `Faker` plugin, run the command: ```npm install faker@5.5.3```.  
-To use `Faker` in your tests, go to `plugins`/`index.js` file and paste it:
+To use `Faker` in your tests, go to `support`/`generate.js` file and write the next code:
 
 ```js
-const faker = require('faker');
+const faker = require('@faker-js/faker');
 
-module.exports = (on, config) => {
-    on('task', {
-        freshUser() {
-            const random = Math.round(Math.random() * 1000000);
+function generateUser() {
+  const random = Math.random().toString().slice(2, 6);
+  const username = faker.internet.userName() + '_' + random;
+  const email = `${username}@mail.com`;
+  const password = '12345Qwert!';
 
-            return {
-                username: faker.name.firstName() + random,
-                email: `test_${random}@mail.com`,
-                password: '12345Qwert!',
-            };
-        },
-    });
-};
+  return { email, password, username };
+}
+
+module.exports = { generateUser };
 ```
 
-Now, you can write your tests:
+Now, you can generate a new user in your tests:
 
 ```js
-let user;
+const { generateUser } = require('../support/generate');
 
 describe('Your Second Test', () => {
-    before(function () {
-        cy.task("freshUser").then((freshUser) => {
-            user = freshUser;
-        });
-    });
-
-    it('Sign up with faker', () => {
-      <your_code>
-    })
-  })
+  it('Sign up with faker', () => {
+    const user = generateUser();
+    
+    <your_code>
+  });
+});
 ```
