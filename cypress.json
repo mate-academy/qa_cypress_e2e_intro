@@ -1,1 +1,5 @@
-{}
+{
+    "baseUrl": "https://react-redux.realworld.io/",
+    "viewportWidth": 900,
+    "viewportHeight": 500
+}
