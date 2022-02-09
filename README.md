@@ -32,7 +32,7 @@ To install `Faker` plugin, run the command: ```npm install faker@5.5.3```.
 To use `Faker` in your tests, go to `support`/`generate.js` file and write the next code:
 
 ```js
-const faker = require('@faker-js/faker');
+const faker = require('faker');
 
 function generateUser() {
   const random = Math.random().toString().slice(2, 6);
