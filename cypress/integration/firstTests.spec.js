@@ -5,7 +5,7 @@ beforeEach(() => {
 })
 
 describe('First Test', () => {
-  it('sign in with valid data', () => {
+  it('Sign In with valid data', () => {
   cy.get (':nth-child(2) > .nav-link')
     .click()
     .get (':nth-child(1) > .form-control')
