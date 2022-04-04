@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-const { generateUser } = require("../support/generate");
+const {generateUser} = require("../support/generate");
 const {email, password, username } = generateUser();
 describe('Sign up', () => {
     beforeEach(() => {
@@ -20,7 +20,8 @@ describe('Sign up', () => {
       cy.contains('.btn','Sign in')
         .click();
 
-      cy.get(':nth-child(4) > .nav-link')
-        .should('contain', username)
+      cy.contains('a')
+        .should('contain', username);
     });
   });
+  

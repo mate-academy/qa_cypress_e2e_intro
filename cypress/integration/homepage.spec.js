@@ -5,9 +5,8 @@ describe('Home page', () => {
     cy.visit('/');
   });
 
-  it('Should open Sign up page', () => {
+  it('Redirect to Sign up page', () => {
     cy.contains('a','Sign up')
-      .should('exist')
       .click();
 
     cy.assertPageURl('/register');
@@ -16,9 +15,8 @@ describe('Home page', () => {
       .should('contain.text','Sign Up');
   });
 
-  it('Should open Sign in page', () => {
+  it('Redirect to Sign in page', () => {
     cy.contains('a','Sign in')
-      .should('exist')
       .click();
       
     cy.assertPageURl('/login');
@@ -26,5 +24,16 @@ describe('Home page', () => {
     cy.get('h1')
       .should('contain.text','Sign In');
   });
+
+  it('Redirect to Home page', () => {
+    cy.contains('a','Home')
+      .click();
+      
+    cy.assertPageURl('/');
+
+    cy.get('h1')
+      .should('contain.text','conduit');
+  });
 });
+
   

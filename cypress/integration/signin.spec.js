@@ -17,10 +17,10 @@ describe('Sign in', () => {
       cy.contains('.btn','Sign in')
         .click();
     
-        cy.get(':nth-child(4) > .nav-link')
+        cy.contains('a')
         .should('contain.text', 'Alva_Haag_6551')
-
     });
-
   });
+  
+
  
