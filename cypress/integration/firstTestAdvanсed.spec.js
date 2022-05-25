@@ -31,5 +31,6 @@ describe('Sign up form', () => {
 
     cy.get(':nth-child(4) > .nav-link')
       .should('contain', user.username);
+
   });
 });

@@ -22,7 +22,7 @@ describe('Sign in form', () => {
       .click();
     
     cy.get(':nth-child(4) > .nav-link')
-      .contains('robert111')
+      .should('contain', "robert111");
 
     
 
