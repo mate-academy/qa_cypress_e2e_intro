@@ -2,7 +2,7 @@
 
 describe('Sign in form', () => {
   it('should allow to login', () => {
-    cy.visit('https://react-redux.realworld.io');
+    cy.visit('/');
 
     cy.get(':nth-child(2) > .nav-link')
       .click();
