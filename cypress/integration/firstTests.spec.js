@@ -1,10 +1,10 @@
 /// <reference types="cypress" />
 
-describe('first test', () => {
+describe('Sign in form', () => {
   beforeEach(() =>{
     cy.visit('/')
   })
-  it('test', () => {
+  it('should allow to log in', () => {
     cy.get('h1')
       .should('contain.text', 'conduit');
 
