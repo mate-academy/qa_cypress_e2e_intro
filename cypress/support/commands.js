@@ -1,3 +1,14 @@
+/// <reference types="cypress" />
+
+const { generateUser } = require("./jenerate")
+
+Cypress.Commands.add('registerNewUser', () => {
+    const user = generateUser();
+
+    cy.request('POST', 'https://api.realworld.io/api/users', { user })
+        .then(response => ({...response.body.user, ...user }))
+})
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
