@@ -27,7 +27,7 @@ describe('User should be able to', () => {
       .should('contain.text', username);
   });
 
-  it('to create an account with valid data', () => {
+  it('create an account with valid data', () => {
     cy.visit('#/register');
 
     const { username, email, password } = generateUser();
