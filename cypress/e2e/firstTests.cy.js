@@ -34,6 +34,7 @@ describe('User should be able', () => {
 
   });
 
+  
   it('to sign up with valid data via Faker', () => {
   
   const { email, password, username } = generateUser();
