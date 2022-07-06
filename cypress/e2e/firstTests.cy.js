@@ -4,7 +4,7 @@ const { generateUser } = require('../support/generate');
 
 describe('Sign in', () => {
   beforeEach(() => {
-    cy.visit('/#/login')
+    cy.visit('https://react-redux.realworld.io/#/login')
   });
   
   it('Should allow to sign in', () => {
@@ -24,7 +24,7 @@ describe('Sign in', () => {
 
 describe('Sign up', () => {
   beforeEach(() => {
-    cy.visit('/#/register')
+    cy.visit('https://react-redux.realworld.io/#/register')
   });
   
   it('Should allow to sign up', () => {
