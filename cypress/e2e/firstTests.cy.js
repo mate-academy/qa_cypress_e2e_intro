@@ -7,11 +7,11 @@ describe('', () => {
   
   
   it('', () => {
-   cy.visit('http://localhost:1667/#/login');
+   cy.visit('https://react-redux.realworld.io/#/login');
    cy.get(':nth-child(1) > .form-control')
-     .type('kakoc@icloud.com')
+     .type('kakoc.pwn@gmail.com')
     cy.get(':nth-child(2) > .form-control')
-    .type('Asdqczes00')
+    .type('321678')
     cy.get('.btn')
     .click();
     cy.get(':nth-child(4) > .nav-link')
