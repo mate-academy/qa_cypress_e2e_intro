@@ -23,5 +23,3 @@ describe('Visit "Sign in" page', () => {
       .should('contain.text', 'test.user.qa.123')
   });
 });
-
-//'test.user.qa.123@gmail.com'
