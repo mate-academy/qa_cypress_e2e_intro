@@ -6,7 +6,7 @@ const username = `username${random}`;
 const email = `${username}@mail.com`;
 const password = '12345Qwert!';
 
-describe('Basic level', () => {
+describe('Basic lvl', () => {
   it('Succsessfull login valid data ', () => {
 
     cy.visit (`https://react-redux.realworld.io/#/?_k=bow642`);
