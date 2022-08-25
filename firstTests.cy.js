@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('My first tests', () => {
+describe('Login page', () => {
   it('should', () => {
     cy.visit('https://react-redux.realworld.io')
     
