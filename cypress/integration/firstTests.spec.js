@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
-describe('', () => {
-  it('', () => {
+describe('Login page', () => {
+  it('should allow user to login with valid registered data', () => {
     
   });
 });
