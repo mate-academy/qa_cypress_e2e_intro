@@ -11,4 +11,3 @@ module.exports = defineConfig({
     baseUrl: "https://react-redux.realworld.io",
   },
 });
-
