@@ -7,11 +7,8 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       return require("./cypress/plugins/index.js")(on, config);
     },
-  },
-});
 
-module.exports = defineConfig({
-  e2e: {
     baseUrl: "https://react-redux.realworld.io",
   },
 });
+
