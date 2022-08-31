@@ -1,10 +1,6 @@
 /// <reference types="cypress" />
 
-// const { describe } = require("mocha");
-
 const { generateUser } = require('../support/generate');
-
-// '../support/generate'
 
 describe('Your Second Test', () => {
 
