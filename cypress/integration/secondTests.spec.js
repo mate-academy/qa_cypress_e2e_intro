@@ -2,7 +2,7 @@
 
 const { generateUser } = require('../support/generate');
 
-describe ('my second test', () => {
+describe ('my second test [Nataliia Solotva]', () => {
 
   before (() => {
     cy.visit('https://react-redux.realworld.io/')
@@ -22,7 +22,7 @@ describe ('my second test', () => {
     cy.get('.btn')
     .click();
     cy.get(':nth-child(4) > .nav-link')
-    .should('contain', user.username);
+    .should('contain', user.username)
   });
 });
 

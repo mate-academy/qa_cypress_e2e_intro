@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe ('my first test', () => {
+describe ('my first test [Nataliia Solotva]', () => {
   before (() => {
     cy.visit('https://react-redux.realworld.io/')
   });
@@ -15,7 +15,7 @@ describe ('my first test', () => {
     cy.get('.btn')
     .click();
     cy.get(':nth-child(4) > .nav-link')
-    .should('contain', 'nataliia123');
+    .should('contain', 'nataliia123')
   });
 });
 
