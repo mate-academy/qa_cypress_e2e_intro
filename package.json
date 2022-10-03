@@ -1,0 +1,23 @@
+{
+  "name": "cypress_first_hw",
+  "version": "1.0.0",
+  "description": "Workflow:\r 1. Fork the repo.\r 1. Clone **your** forked repository.\r 1. Create a new branch `git checkout -b develop`.\r 1. Resolve tasks in the `cypress`/`integration`/`firstTest.spec.js`.\r 1. Create a pull request.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Volodymyr-Mandryka/cypress_first_hw.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Volodymyr-Mandryka/cypress_first_hw/issues"
+  },
+  "homepage": "https://github.com/Volodymyr-Mandryka/cypress_first_hw#readme",
+  "dependencies": {
+    "cypress": "^10.9.0"
+  }
+}
