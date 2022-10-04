@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 describe('Sign in, First test', () => {
-  it('should', () => {
+  before(() => {
     cy.visit('https://react-redux.realworld.io')
   });
 
@@ -10,7 +10,7 @@ describe('Sign in, First test', () => {
     .click();
 
     cy.get(':nth-child(1) > .form-control')
-    .type('loomloom@qa.team');
+    .type('loom1loom1@qa.team');
 
     cy.get(':nth-child(2) > .form-control')
     .type('1234Qwer!');
@@ -19,7 +19,7 @@ describe('Sign in, First test', () => {
     .click();
 
     cy.get(':nth-child(4) > .nav-link')
-    .should('contain', '');
+    .should('contain', 'loom1loom1');
   });
 
 });
