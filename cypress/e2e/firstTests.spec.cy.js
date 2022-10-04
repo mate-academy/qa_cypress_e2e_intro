@@ -2,7 +2,7 @@
 
 describe('Sign in with valid credentials', () => {
   it('User is able to login with valid credentials', () => {
-    cy.visit('/login');
+    cy.visit('https://react-redux.realworld.io/#/login');
 
     cy.get('[type="email"]')
       .type("Testing123@gmail.com");
