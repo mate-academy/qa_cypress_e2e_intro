@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('', () => {
+describe('firstTests', () => {
   it('', () => {
     
   });
