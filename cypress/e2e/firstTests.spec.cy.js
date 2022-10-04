@@ -1,36 +1,19 @@
 /// <reference types="cypress" />
 
-describe('', () => {
+describe('Sign in with valid credentials', () => {
+  it('User is able to login with valid credentials', () => {
+    cy.visit('/login');
 
-/*   beforeEach(() => {
-    cy.login(user);
-  });
- */
-  it('should perform successful loging', () => {
-    cy.visit('/');
+    cy.get('[type="email"]')
+      .type("Testing123@gmail.com");
 
-    cy.contains('a', 'Global Feed');
-      
+    cy.get('[type="password"]')
+      .type("Testing123");
 
-    cy.get(':nth-child(2) > .nav-link')
+    cy.get('.btn')
       .click();
 
-    cy.get(':nth-child(1) > .form-control')
-      .type(user1.user.email);
-
-    cy.get(':nth-child(2) > .form-control')
-     .type(user1.user.password);
-
-    cy.contains('button', 'Sign in')
-      .click();
-
-    cy.contains(':nth-child(4) > .nav-link', "TesterTesting123");
+    cy.get(':nth-child(4) > .nav-link')
+      .should("contain.text", "e12d123e12eqwe12ed13e1e");
   });
 });
-
-
-const user1 = { user: {
-  email: "TesterTesting123@gmail.com",
-  password: "TesterTesting123"
-  }
-};
