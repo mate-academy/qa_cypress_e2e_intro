@@ -1,0 +1,24 @@
+{
+  "name": "qa_cypress_e2e_intro",
+  "version": "1.0.0",
+  "description": "## Workflow",
+  "main": "cypress.config.js",
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "cypress": "^11.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mate-academy/qa_cypress_e2e_intro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mate-academy/qa_cypress_e2e_intro/issues"
+  },
+  "homepage": "https://github.com/mate-academy/qa_cypress_e2e_intro#readme"
+}
