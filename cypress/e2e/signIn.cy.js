@@ -11,6 +11,6 @@ describe('Sign In page', () => {
 
     cy.get('.btn').click();
 
-    cy.get(':nth-child(4) > .nav-link');
+    cy.get(':nth-child(4) > .nav-link').should('contain', 'Quae1');
   });
 });
