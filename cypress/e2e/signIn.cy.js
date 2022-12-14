@@ -1,8 +1,5 @@
 /// <reference types="cypress" />
 
-const { createVerify } = require("crypto");
-
-const logName = 'DenTester11'
 
 describe('Sign In page', () => {
 
