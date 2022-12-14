@@ -7,6 +7,6 @@ describe('Sign In page', () => {
     cy.get(':nth-child(1) > .form-control').type('test1412@gmail.com');
     cy.get(':nth-child(2) > .form-control').type('test1412');
     cy.get('.btn').click();
-    cy.get(':nth-child(4) > .nav-link')
+    cy.get(':nth-child(4) > .nav-link').should('contain', 'test14121412')
   });
 });
