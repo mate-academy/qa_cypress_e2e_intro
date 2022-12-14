@@ -18,3 +18,4 @@ describe('Sign in page', () => {
     cy.get(':nth-child(4) > .nav-link').should('contain.text', 'samanta');
   })
 })
+
