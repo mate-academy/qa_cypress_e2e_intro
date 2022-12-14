@@ -11,7 +11,6 @@ describe('Sign In page', () => {
 
     cy.get('.btn').click();
     
-    cy.get(':nth-child(4) > .nav-link');
     cy.get(':nth-child(4) > .nav-link').should('contain', 'Nemo2022');
     
     cy.get('.feed-toggle > .nav > :nth-child(2) > .nav-link');
