@@ -4,7 +4,6 @@ describe('Sign In page', () => {
     cy.visit('https://react-redux.realworld.io/');
     
     cy.get(':nth-child(2) > .nav-link').click();
-    
     cy.url().should('include', '/login');
     cy.get('h1.text-xs-center');
 
