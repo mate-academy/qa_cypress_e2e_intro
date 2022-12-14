@@ -1,17 +1,20 @@
 describe('Sign in page', () => {
   it('should login user with registered credentials', () => {
-    cy.visit('https://react-redux.realworld.io')
+    //go to the site
+    cy.visit('https://react-redux.realworld.io');
 
-    cy.get(':nth-child(2) > .nav-link').click()
+    //click on the 'Sign In' link
+    cy.get(':nth-child(2) > .nav-link').should('contain.text', 'Sign in').click();
 
-    cy.get(':nth-child(1) > .form-control').type('sam123@gmail.com')
+    //fill the fields and click the button
+    cy.get(':nth-child(1) > .form-control').type('sam123@gmail.com');
+    cy.get(':nth-child(2) > .form-control').type('samanta123');
+    cy.get('.btn').should('contain.text', 'Sign in').click();
+    
+    //wait
+    cy.wait(3000);
 
-    cy.get(':nth-child(2) > .form-control').type('samanta123')
-
-    cy.get('.btn').click()
-
-    cy.wait(3000)
-
-    cy.get(':nth-child(4) > .nav-link')
+    //check the username existance
+    cy.get(':nth-child(4) > .nav-link').should('contain.text', 'samanta');
   })
 })
