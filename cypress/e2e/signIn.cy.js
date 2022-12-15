@@ -19,5 +19,6 @@ describe('Sign in', () => {
 
     cy.get(':nth-child(4) > .nav-link')
     .should('contain', 'demoname')
+    
   })
 });
