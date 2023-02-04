@@ -6,9 +6,8 @@ const password = 'Pa$$w0rd!'
 describe('Sign In page', () => {
   it('should provide an ability to log in', () => {
 
-    //cy.visit('/');
-    cy.visit('https://react-redux.realworld.io');
-
+    cy.visit('/');
+  
     cy.get(':nth-child(2) > .nav-link').should('contain.text', 'Sign in');
 
     cy.get(':nth-child(2) > .nav-link').click()
@@ -23,5 +22,4 @@ describe('Sign In page', () => {
     
     cy.get(':nth-child(4) > .nav-link').should('contain.text', 'Dolorem quod molesti');
   });
-
 })
