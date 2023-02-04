@@ -7,6 +7,7 @@
 1. Run the command `npm i -D @types/cypress@latest`.
 1. Create a new branch `git checkout -b testing`.
 1. Resolve tasks in the `cypress`/`e2e`/`signIn.cy.js`.
+1. Run 'npx cypress open' to open cypress
 1. Create a pull request.
 1. Do not forget to click on `Re-request review` if you submit the homework after previous review.
 
