@@ -2,6 +2,24 @@
 
 describe('Sign In page', () => {
   it('should provide an ability to log in', () => {
-    
+    cy.visit('https://react-redux.realworld.io')
+      .get('h1')
+      .should('contain.text', 'conduit');
+
+    cy.contains('Sign in')
+      .click();
+
+      cy.get(':nth-child(1) > .form-control')
+      .type('cytestie0302@mail.com');
+
+      cy.get(':nth-child(2) > .form-control')
+        .type('cytestie0302')
+
+      cy.get('.btn')
+        .click();
+
+        cy.get(':nth-child(4) > .nav-link')
+          .contains('cytestie0302')
+
   });
 });
