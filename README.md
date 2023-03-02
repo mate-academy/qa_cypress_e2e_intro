@@ -20,3 +20,5 @@ App for testing: `https://react-redux.realworld.io`
 1. Fill in email and password fields as valid data.
 1. Click on [Sign In] button.
 1. Assert your username appeared in "Site navigation (Header)" menu.
+
+Test
