@@ -1,7 +1,18 @@
-/// <reference types="cypress" />
+describe('Sign In Test', () => {
+  it('should sign in and verify username', () => {
+    cy.visit('https://react-redux.realworld.io/#/login');
 
-describe('Sign In page', () => {
-  it('should provide an ability to log in', () => {
-    
+    // Fill in email and password fields as valid data
+    cy.get('input[type="email"]').type('maksimec2177@gmail.com');
+    cy.get('input[type="password"]').type('Ufiraf04');
+
+    // Click on Sign In button
+    cy.get('button[type="submit"]').click();
+
+    // Wait for page to load
+    cy.url().should('eq', 'https://react-redux.realworld.io/#/');
+
+    // Assert that the username appears in Site navigation (Header) menu
+    cy.get('.nav-link').should('contain', 'validusername');
   });
 });
