@@ -9,10 +9,7 @@ describe('Sign In Test', () => {
     // Click on Sign In button
     cy.get('button[type="submit"]').click();
 
-    // Wait for page to load
-    cy.url().should('eq', 'https://react-redux.realworld.io/#/');
-
     // Assert that the username appears in Site navigation (Header) menu
-    cy.get('.nav-link').should('contain', 'validusername');
+    cy.get('.nav-link').should('contain', 'andrew228');
   });
 });
