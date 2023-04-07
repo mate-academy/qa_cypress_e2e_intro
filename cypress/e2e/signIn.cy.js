@@ -11,12 +11,6 @@ describe('Sign in page', () => {
     const email = `${username}@hotmail.com`
     const password = 'Qwerty1!'
 
-    // sending requests is blocked in this homework :(
-    // cy.request('POST', 'api/users', {
-    //   email,
-    //   username,
-    //   password
-    // })
     cy.visit('https://react-redux.realworld.io')
 
     cy.contains('a', 'Sign up')
