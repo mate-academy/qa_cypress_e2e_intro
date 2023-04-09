@@ -2,9 +2,9 @@
 
 describe('Sign In page', () => {
   it('should provide an ability to log in', () => {
-    const email = 'test1@gmail.com';
-  const username = 'qatester123';
-  const password = 'Qwerty123&';
+  const email = 'tester@email.com';
+  const username = 'S1mple2';
+  const password = 'SlavaUkraine123';
 
   it('should provide an ability to log in', () => {
 
