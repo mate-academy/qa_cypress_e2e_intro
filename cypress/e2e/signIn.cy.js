@@ -8,6 +8,7 @@ describe('Sign In page', () => {
     cy.get('[placeholder="Email"]').type("kristina.kuprin@gmail.com")
     cy.get('[placeholder="Password"]').type("11031990")
     cy.contains('.btn', 'Sign in').click()
-    cy.get(':nth-child(4) > .nav-link')
+    cy.get('nav')
+    .should('contain.text', 'test1103')
   });
 });
