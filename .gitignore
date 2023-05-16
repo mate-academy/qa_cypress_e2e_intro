@@ -4,3 +4,15 @@
 
 # Ignore node_modules
 node_modules
+
+# package-lock.json & package.json
+package-lock.json
+package.json
+
+#screenshots videos and assets
+/screenshots
+/videos
+/results/assets
+
+# Optional npm cache directory
+.npm
