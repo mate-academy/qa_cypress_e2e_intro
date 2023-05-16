@@ -5,7 +5,7 @@ import { authData } from "../support/authData";
 
 
 describe('Sign In', () => {
-  it('should provide an ability to log in with email and password', () => {
+  it('should provide an ability to sign in with email and password', () => {
     const { userName, email, password } = authData;
     const homePage = new HomePage();
     const loggedInUser = new LoggedInUser();
