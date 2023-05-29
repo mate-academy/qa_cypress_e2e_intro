@@ -1,25 +1,21 @@
 /// <reference types="cypress" />
-const random = Math.floor(Math.random (1000) * 1000);
-const userName = `user_den${random}`;
-const email = `${userName}@gmail.com`;
 
-describe('Registration', () => {
+
+describe('Homework task', () => {
   before(() => {
     cy.visit('https://react-redux.realworld.io');
   });
 
-  it('Register a new user', () => {
-    cy.get(':nth-child(3) > .nav-link')
+  it('Sign in user', () => {
+    cy.get(':nth-child(2) > .nav-link')
     .click ();
-    cy.get(':nth-child(1) > .form-control')  
-    .type (userName);
+    cy.get(':nth-child(1) > .form-control')
+    .type('user_den555@gmail.com');
     cy.get(':nth-child(2) > .form-control')
-    .type (email);
-    cy.get(':nth-child(3) > .form-control')
-    .type("Qwerty!23");
+    .type('Qwert!23');
     cy.get('.btn')
     .click();
     cy.get(':nth-child(4) > .nav-link')
-    .should('contain',userName)
-  });
+    .should('contain', 'user_den555');
+});
 });
