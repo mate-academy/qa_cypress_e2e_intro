@@ -12,6 +12,9 @@ describe('Sign In page', () => {
 
     cy.get(':nth-child(2) > .nav-link')
       .click()
+    
+    cy.get('h1.text-xs-center')
+      .should('contain.text', 'Sign In')
 
     cy.get('[placeholder="Email"]')
       .type(email)
