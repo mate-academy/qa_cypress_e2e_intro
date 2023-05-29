@@ -7,6 +7,7 @@ describe('Sign In page', () => {
   });
 
   it('should provide an ability to log in', () => {
+    
     cy.contains('.nav-link', 'Sign in')
       .click();
 
@@ -21,6 +22,6 @@ describe('Sign In page', () => {
 
     cy.get(':nth-child(4) > .nav-link')
       .should('contain', 'UserNewTest');
-      
+
   });
 });
