@@ -1,4 +1,7 @@
 /// <reference types="cypress" />
+const email = 'dkhozieiev@gmail.com';
+const password = 'dkhozieiev';
+const username = 'dkhozieiev';
 
 describe('Login page', () => {
   it('should login with valid date', () => {
@@ -8,15 +11,15 @@ describe('Login page', () => {
      .click()
 
      cy.get(':nth-child(1) > .form-control')
-     .type('dkhozieiev@gmail.com');
+     .type(email);
 
      cy.get(':nth-child(2) > .form-control')
-     .type('dkhozieiev');
+     .type(password);
 
      cy.get('.btn')
      .click()
 
      cy.get(':nth-child(4) > .nav-link')
-     .should('contain', 'dkhozieiev');
+     .should('contain', username);
   });
 });
