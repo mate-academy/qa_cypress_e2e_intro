@@ -1,20 +1,16 @@
 /// <reference types="cypress" />
-const randomNumber = Math.floor(Math.random(1000) * 1000);
-const username = `testuser${randomNumber}`;
 
 describe('Sign In page', () => {
   beforeEach(() => {
-    cy.visit('https://react-redux.realworld.io/#/register')
+    cy.visit('https://react-redux.realworld.io/#/login')
   });
   it('should provide an ability to log in', () => {
-    cy.get(':nth-child(1) > .form-control').type(username);
+    cy.get(':nth-child(1) > .form-control').type('vik32@qa.team');
 
-    cy.get(':nth-child(2) > .form-control').type(`${username}@qa.team`);
+    cy.get(':nth-child(2) > .form-control').type('Test_vik32');
 
-    cy.get(':nth-child(3) > .form-control').type(`Pass_${username}`);
+    cy.contains('.btn', 'Sign in').click();
 
-    cy.contains('.btn', 'Sign up').click();
-
-    cy.get(':nth-child(4) > .nav-link').should('contain', username);
+    cy.get(':nth-child(4) > .nav-link').should('contain', 'Test_vik32');
   });
 });
