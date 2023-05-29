@@ -9,8 +9,10 @@ describe('Sign In page', () => {
     
     cy.get(':nth-child(3) > .nav-link')
       .click();
+      
     cy.get(':nth-child(1) > .form-control')
       .type(userName);
+
     cy.get(':nth-child(2) > .form-control')
       .type(userEmail);
 
