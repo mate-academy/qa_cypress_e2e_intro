@@ -2,7 +2,9 @@
 
 describe('Sign In page', () => {
   beforeEach(() => {
-    cy.visit('https://react-redux.realworld.io/#/login')
+    cy.visit({ url: 'https://react-redux.realworld.io/#/login', method: 'GET'})
+    cy.get('h1')
+    .should('contain', 'Sign In')
   });
 
   it('should provide an ability to log in', () => {
