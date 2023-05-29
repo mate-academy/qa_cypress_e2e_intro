@@ -3,7 +3,6 @@
 describe('Sign In page', () => {
   const userEmail = 'test_userqwe123@gmail.com';
   const userPassword = 'test_userqwe123';
-  const userName = 
 
   beforeEach(() => {
     cy.visit('https://react-redux.realworld.io')
