@@ -11,6 +11,8 @@ describe('Homework task', () => {
     .click ();
     cy.contains('h1', 'Sign In')
     .should('be.visible');
+    cy.url()
+    .should('include', 'login');
     cy.get(':nth-child(1) > .form-control')
     .type('user_den555@gmail.com');
     cy.get(':nth-child(2) > .form-control')
