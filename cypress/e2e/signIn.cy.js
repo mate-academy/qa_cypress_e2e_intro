@@ -6,6 +6,12 @@ describe('Sign In page', () => {
   });
 
   it('should provide an ability to log in', () => {
+    cy.url()
+      .should('include', '/login')
+    
+    cy.get('h1')
+      .should('contain.text', 'Sign In')
+
     cy.get(':nth-child(1) > .form-control')
       .type('Anna_Maria1234@mail.com');
 
