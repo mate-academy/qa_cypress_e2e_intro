@@ -8,12 +8,15 @@ describe('Sign In page', () => {
   it('should provide an ability to log in', () => {
     cy.get(':nth-child(1) > .form-control')
     .type('ghostmane@qa.team')
-    
+
 
     cy.get(':nth-child(2) > .form-control')
     .type('12345');
 
     cy.contains('.btn', 'Sign in')
     .click();
+
+    y.get('.navbar')
+      .should('contain', ghostmane1);
   });
 });
