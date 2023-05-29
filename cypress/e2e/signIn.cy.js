@@ -3,7 +3,7 @@
 const baseUrl = 'https://react-redux.realworld.io';
 const username = 'Cytest';
 const email = '123qwe@mail.com';
-const password = '123qwe@mail.com';
+const password = 'passpass';
 
 describe('Sign In page', () => {
   it('should provide an ability to log in', () => {
