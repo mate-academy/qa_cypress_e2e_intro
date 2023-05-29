@@ -10,10 +10,10 @@ describe('Login page', () => {
     cy.get(':nth-child(2) > .nav-link')
      .click()
 
-     cy.get(':nth-child(1) > .form-control')
+     cy.get(':nth-child(1) > .form-control, [placeholder = "Email"]')
      .type(email);
 
-     cy.get(':nth-child(2) > .form-control')
+     cy.get(':nth-child(2) > .form-control, [placeholder = "Password"]')
      .type(password);
 
      cy.get('.btn')
