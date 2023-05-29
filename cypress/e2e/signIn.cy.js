@@ -19,7 +19,7 @@ describe('Sign In page', () => {
     .click();
     
     cy.get('[class = "nav-link active"]')
-    .should('contains.text', 'Your feed');
+    .should('contains.text', 'Your Feed');
   }
   
   );
