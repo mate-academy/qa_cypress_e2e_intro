@@ -13,6 +13,12 @@ describe('Sign In page', () => {
     cy.contains('.nav-link', 'Sign in')
       .click();
 
+    cy.url()
+      .should('include', '/login');
+
+    cy.get('h1')
+      .should('contain.text', 'Sign In')
+
     cy.get('[placeholder="Email"]')
       .type(email);
 
