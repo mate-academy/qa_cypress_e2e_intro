@@ -16,7 +16,7 @@ describe('Sign In page', () => {
     cy.contains('.btn', 'Sign in')
     .click();
 
-    y.get('.navbar')
-      .should('contain', ghostmane1);
+    cy.get('.navbar')
+      .should('contain', 'ghostmane1');
   });
 });
