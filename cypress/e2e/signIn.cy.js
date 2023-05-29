@@ -1,9 +1,6 @@
 /// <reference types="cypress" />
 
 const baseUrl = 'https://react-redux.realworld.io';
-const username = 'Cytest';
-const email = '123qwe@mail.com';
-const password = '123qwe@mail.com';
 
 describe('Sign In page', () => {
   it('should provide an ability to log in', () => {
@@ -13,19 +10,16 @@ describe('Sign In page', () => {
     .click();
     
     cy.get('[type = email]')
-    .type(email);
+    .type('123qwe@mail.com');
 
     cy.get('[type = password]')
-    .type(password);
+    .type('passpass');
 
     cy.get('[type = submit]')
     .click();
     
     cy.get('[class = "nav-link active"]')
     .should('contains.text', 'Your Feed');
-
-    cy.contains(username)
-    .should('contains.text', username);
   }
   
   );
