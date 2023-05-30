@@ -1,34 +1,27 @@
 /// <reference types="cypress" />
 
-const email = 'cypressfan@gmail.com';
-const password = 'SecretFan0fCypress';
-const username = 'JustCypressFan';
+/// <reference types="cypress" />
 
-describe ('Sign In page', () => {
-  it('test of ability to Sign in', () => {
-  beforeEach(() => {
-    cy.visit('https://react-redux.realworld.io')
-  });
+const email = 'cypresstest@qa.com';
+const password = 'cypresstestqa';
+const username = 'Test Username';
 
-  test('test of ability to Sign in', () => {
-    cy.contains('.nav-link', 'Sign in')
-    .should('exist')
-    .click();
+describe('Sign In page', () => {
+  it('should provide an ability to log in', () => {
 
-  });
+    cy.visit('https://react-redux.realworld.io/')
 
-  test('Test of ability to enter password and email', () => {
-    cy.get('.form-control form-control-lg', [placeholder = "Email"])
-    .type(email);
+    cy.contains('Sign in')
+      .click()
 
-    cy.get('.form-control form-control-lg', [placeholder = "Password"])
-    .type(password);
+    cy.get('[placeholder="Email"]')
+      .type(email)
 
-  });
+    cy.get('[placeholder="Password"]')
+      .type(password)
 
-  test('should display the username in the header menu', () => {
-    cy.get('.nav-link')
-      .should('contain', username);
-  });
-  })
-});
+    cy.contains('.btn', 'Sign in')
+      .click()
+
+    cy.get(':nth-child(4) > .nav-link')
+     .should('contain', username);
