@@ -16,6 +16,7 @@ describe('Sign In page', () => {
     cy.get('.btn')
       .click();
 
-    cy.contains((':nth-child(4) > .nav-link', 'tester_007'))
+    cy.get((':nth-child(4) > .nav-link'))
+      .should('contain', 'tester_007');
   });
-});  //what the hell
+});  
