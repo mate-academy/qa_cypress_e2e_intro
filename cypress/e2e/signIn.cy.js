@@ -9,6 +9,8 @@ const username = 'Test Username';
 describe('Sign In page', () => {
   it('should provide an ability to log in', () => {
 
+  });
+});
     cy.visit('https://react-redux.realworld.io/')
 
     cy.contains('Sign in')
