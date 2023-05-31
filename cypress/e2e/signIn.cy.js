@@ -1,8 +1,17 @@
 /// <reference types="cypress" />
 
 describe('Sign In page', () => {
+  beforeEach(() => {
+
+    cy.visit('/login');
+
+    cy.url()
+    .should('include', '/login');
+
+    cy.get('h1')
+    .contains('Sign In');
+  });
   it('should provide an ability to log in', () => {
-    cy.visit('https://react-redux.realworld.io/#/login?_k=m07odl')
 
     cy.get('input[type="email"]').type('andreykuzmich91@qa1.com');
 
