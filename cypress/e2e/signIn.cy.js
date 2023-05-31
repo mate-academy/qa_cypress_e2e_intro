@@ -19,7 +19,7 @@ describe('Sign In page', () => {
 
     cy.get('button[type = "submit"]').click();
 
-    cy.contains('a', 'aaaaaaaaaaaaaaaaaaaaaaaaaa1').click();
+    cy.contains('.nav-link', 'aaaaaaaaaaaaaaaaaaaaaaaaaa1').click();
    
     
   });
