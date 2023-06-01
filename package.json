@@ -8,6 +8,7 @@
     "sequelize-cli": "^6.4.1"
   },
   "devDependencies": {
+    "@types/cypress": "latest",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.52.0",
     "eslint": "^8.34.0",
