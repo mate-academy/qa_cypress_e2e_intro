@@ -1,7 +1,6 @@
 /// <reference types="cypress" />
 
 describe('Sign In page', () => {
-  
   const email = 'baggins@qa.test';
   const password = 'Frodo123!';
 
