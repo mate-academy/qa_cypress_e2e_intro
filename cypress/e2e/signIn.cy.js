@@ -17,11 +17,8 @@ it('should provide an ability to log in', () => {
   cy.get('h1')
     .should('contain.text', 'Sign In');
 
-  cy.get(':nth-child(1) > .form-control')
-    .type('afgghhb@mailinator.com');
-
-  cy.get(':nth-child(2) > .form-control')
-    .type('Pa$$w0rd!');
+    cy.get('input[type="email"]').type('afgghhb@mailinator.com')
+    cy.get('input[type="password"]').type('Pa$$w0rd!')
 
   cy.contains('.btn', 'Sign in')
     .click();
