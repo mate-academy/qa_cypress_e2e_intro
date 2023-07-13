@@ -1,10 +1,9 @@
 /// <reference types="cypress" />
 
-const { random } = require("cypress/types/lodash");
+// const { random } = require("cypress/types/lodash");
 
 describe('Sign In page', () => {
   it('should provide an ability to log in', () => {
-
     const userName = 'qaqa11';
     const email = 'qaqa11@gmail.com';
     const password = 'qaqa11';
@@ -20,6 +19,5 @@ describe('Sign In page', () => {
     cy.get('.btn').click();
 
     cy.get(':nth-child(4) > .nav-link').should('contain', userName);
-
   });
 });
