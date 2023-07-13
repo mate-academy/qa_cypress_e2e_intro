@@ -12,7 +12,7 @@ describe('Sign In page', () => {
 
     cy.get('.btn').click();
 
-    cy.contains("cyTestUser001");
+    cy.get(':nth-child(4) > .nav-link').should('contain', 'cyTestUser001');
 
   });
 });
