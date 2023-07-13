@@ -18,7 +18,7 @@ describe('Sign In page', () => {
     cy.get(':nth-child(2) > .form-control')
       .type('230792');
     cy.contains('.btn', 'Sign in')
-      .click()
+      .click();
 
     cy.get(':nth-child(4) > .nav-link')
       .should('contain.text', 'anton111');
