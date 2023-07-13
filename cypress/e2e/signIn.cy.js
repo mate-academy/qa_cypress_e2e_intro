@@ -15,6 +15,6 @@ describe('Sign In page', () => {
       .type(password)
     cy.get('.btn')
       .click()
-    cy.get(':nth-child(4) > .nav-link').should('contain', userName)
+      cy.get(':nth-child(4) > .nav-link').should('contain', userName)
   });
 });
