@@ -7,7 +7,7 @@ describe('Sign In Test', () => {
     cy.get('input[type="password"]').type('qwerty12345');
 
     cy.contains('button', 'Sign in').click();
-
+    
     cy.get('.nav-link').should('contain', 'Shakirashakira');
   });
 });
