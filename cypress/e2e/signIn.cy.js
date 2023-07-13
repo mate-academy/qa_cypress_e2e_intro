@@ -6,12 +6,14 @@ describe('Sign In page', () => {
 
     cy.get(':nth-child(1) > .form-control')
       .type('testing1045qa@mail.com');
+
     cy.get(':nth-child(2) > .form-control')
       .type('Testing1045');
+      
     cy.get('.btn')
       .click();
-      
+
     cy.get(':nth-child(4) > .nav-link')
-      .should('contain', 'testing1045qa');  
+      .should('contain', 'testing1045qa');
   });
 });
