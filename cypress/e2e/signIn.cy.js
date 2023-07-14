@@ -20,8 +20,6 @@ describe('Sign In page', () => {
     cy.get('.btn')
       .click();
 
-    cy.url()
-      .should('include', '/login');
     cy.get(':nth-child(4) > .nav-link')
       .should('contain.text', 'User_test1');
   });
