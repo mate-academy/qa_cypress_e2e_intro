@@ -1,6 +1,10 @@
 /// <reference types="cypress" />
 
 describe('Sign In page', () => {
+
+  const email = 'anna_anna111@mail.com'
+  const password = 'anna_anna111'
+
   it('should provide an ability to log in', () => {
     cy.visit('/');
 
@@ -8,16 +12,15 @@ describe('Sign In page', () => {
       .click();
 
     cy.get(':nth-child(1) > .form-control')
-      .type('anna_anna111@mail.com');
+      .type(email);
 
     cy.get(':nth-child(2) > .form-control')
-      .type('anna_anna111');
+      .type(password);
 
     cy.get('.btn')
       .click();
 
     cy.get(':nth-child(4) > .nav-link')
       .should('contain.text', 'anna_anna111');
-
   });
 });
