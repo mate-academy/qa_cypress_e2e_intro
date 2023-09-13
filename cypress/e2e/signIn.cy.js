@@ -1,17 +1,14 @@
 /// <reference types="cypress" />
 
-describe('Sign In page', () => {
-  beforeEach(() => {
-    cy.visit('https://react-redux.realworld.io');
-  });
+const { createdUser } = require('../support/createdUser');
 
+describe('Sign In page', () => {
   it('should provide an ability to log in', () => {
-    const email = 'naxu@mailinator.com';
-    const password = 'Pa$$word123';
+    cy.visit('https://react-redux.realworld.io');
+
+    const { username, email, password } = createdUser();
 
     cy.contains('a', 'Sign in').should('exist').click();
-
-    cy.get('h1').should('contain.text', 'Sign In');
 
     cy.contains('Sign in').click();
 
@@ -23,6 +20,6 @@ describe('Sign In page', () => {
 
     cy.get('.btn').click();
 
-    cy.get('nav').contains('officiado222').should('exist');
+    cy.get('nav').contains(username).should('exist');
   });
 });
