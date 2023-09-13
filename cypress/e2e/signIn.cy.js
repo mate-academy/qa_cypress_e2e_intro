@@ -5,15 +5,13 @@ describe('Sign In page', () => {
     cy.visit('https://react-redux.realworld.io');
   });
 
-  it('should click on Sign In link', () => {
-    cy.contains('a', 'Sign in').should('exist').click();
-
-    cy.get('h1').should('contain.text', 'Sign In');
-  });
-
   it('should provide an ability to log in', () => {
     const email = 'naxu@mailinator.com';
     const password = 'Pa$$word123';
+
+    cy.contains('a', 'Sign in').should('exist').click();
+
+    cy.get('h1').should('contain.text', 'Sign In');
 
     cy.contains('Sign in').click();
 
@@ -24,5 +22,7 @@ describe('Sign In page', () => {
     cy.get('[placeholder=Password]').type(password);
 
     cy.get('.btn').click();
+
+    cy.get('nav').contains('officiado222').should('exist');
   });
 });
