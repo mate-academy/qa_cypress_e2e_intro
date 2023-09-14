@@ -7,7 +7,7 @@ describe('Sign In page', () => {
     cy.get(':nth-child(1) > .form-control').type('332323@i.ua');
     cy.get(':nth-child(2) > .form-control').type('12345');
     cy.get('.btn').click();
-    cy.get(':nth-child(4) > .nav-link').should('exist');
+    cy.get(':nth-child(4) > .nav-link').should('contain.text', 'Fungdee');
 
   });
 });
