@@ -7,10 +7,10 @@ describe('Sign In page', () => {
       .click();   
     cy.get(`:nth-child(1) > .form-control`)
       .type(`mark@m.com`);
-    cy.get(`':nth-child(2) > .form-control`)
+    cy.get(`:nth-child(2) > .form-control`)
       .type(`Pa$sword1`);
     cy.get(`.btn`)
       .click();
-    cy.contains(`nav-link(4)`, `griiidms`)
+    cy.contains(`:nth-child(4) > .nav-link`, `griiidms`)
   });
 });
