@@ -20,3 +20,4 @@ describe('Sign in page', ()=> {
     .should('contain.text', 'tyuio_user');
   });
 });
+
