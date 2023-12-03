@@ -11,7 +11,7 @@ describe('Sign In page', () => {
     cy.get('[placeholder = "Password"]').type('123456789');
     cy.contains('[type="submit"]', 'Sign in')
       .click();
-    cy.url()
+    cy.contains('My Settings')
       .should('include', '/#/');
   });
 });
