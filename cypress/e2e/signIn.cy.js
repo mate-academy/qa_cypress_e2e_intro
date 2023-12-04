@@ -8,6 +8,8 @@ describe('Sign In page', () => {
 
     cy.visit('https://react-redux.realworld.io/#/login?_k=b320im');
 
+    cy.url().should('include', 'login');
+
     cy.get('input[placeholder=Email]')
       .type(email);
 
