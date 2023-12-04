@@ -6,7 +6,7 @@ describe('Sign In page', () => {
     cy.get('.navbar a').contains('Sign in').click();
     cy.get('input[type="email"]').type('kredki@kredki.com');
     cy.get('input[type ="password"]').type('kredki');
-    cy.get('button[type="submit"]').contains('Sign in').click();
+    cy.get('button[type="submit"]').click();
     cy.get('.navbar').should('contain', 'kredki');
   });
 });
