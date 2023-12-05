@@ -2,6 +2,10 @@
 
 describe('Sign In page', () => {
   it('should provide an ability to log in', () => {
-    cy.visit('http://localhost:1667/');
+    cy.visit('/#/login?_k=7d9zy5');
+    cy.get('input[placeholder="Email"]').type('testing123qwer@gg.com');
+    cy.get('input[placeholder="Password"]').type('testing123');
+    cy.get('button').contains('Sign in').click();
+    cy.get('.nav-link a').should('contain.text', 'testing123qwer');
   });
 });
