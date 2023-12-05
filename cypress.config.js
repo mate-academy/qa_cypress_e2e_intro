@@ -8,3 +8,5 @@ module.exports = defineConfig({
     }
   }
 });
+
+// proces wysylania zmian na gith
