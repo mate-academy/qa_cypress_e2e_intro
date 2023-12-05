@@ -1,4 +1,4 @@
-/// <reference types="cypress" />
+/// <reference types="Cypress" />
 
 describe('Sign In page', () => {
   beforeEach(() => {
@@ -24,5 +24,3 @@ it('should provide an ability to LOG IN', () => {
     .contains(username)
     .should('have.text', 'test__user_1');
 });
-
-// proces push
