@@ -6,7 +6,7 @@ describe('Sign In page', () => {
   });
 });
 
-it('should provide an ability to log in', () => {
+it('should provide an ability to LOG IN', () => {
   const username = 'test__user_1';
   const email = 'test_user_1@email.com';
   const password = '123456789';
