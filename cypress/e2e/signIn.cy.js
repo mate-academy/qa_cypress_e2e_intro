@@ -6,6 +6,6 @@ describe('Sign In page', () => {
     cy.get('input[placeholder="Email"]').type('testing123qwer@gg.com');
     cy.get('input[placeholder="Password"]').type('testing123');
     cy.get('button').contains('Sign in').click();
-    cy.get('.nav-link a').should('contain.text', 'testing123qwer');
+    cy.get('a.nav-link').should('contain.text', 'testing123qwer');
   });
 });
