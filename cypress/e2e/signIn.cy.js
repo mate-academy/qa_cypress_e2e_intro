@@ -5,7 +5,7 @@ describe('Sign In page', () => {
     cy.visit('https://react-redux.realworld.io/');
     cy.get('nav').should('contain.text', 'Sign up');
     cy.get('nav').should('contain.text', 'Sign in');
-    // Register
+    // User Register
     cy.get('.nav-item').get('a').contains('Sign up').click();
     cy.url().should('contain', 'register');
     cy.get('nav').should('contain.text', 'Sign up');
@@ -15,7 +15,7 @@ describe('Sign In page', () => {
     cy.get('input[placeholder="Password"]').type('JohnSmithpassword');
     cy.get('h1.text-xs-center').click();
     // cy.get('form button').contains('Sign up').click();
-    // Login
+    // User Login
     cy.get('.nav-item').get('a').contains('Sign in').click();
     cy.url().should('contain', 'login');
     cy.get('nav').should('contain.text', 'Sign in');
