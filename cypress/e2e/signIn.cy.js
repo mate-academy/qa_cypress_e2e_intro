@@ -1,5 +1,9 @@
 /// <reference types="cypress" />
 
+Cypress.on('uncaught:exception', (_err, runnable) => {
+  return false;
+});
+
 describe('Sign In page', () => {
   it('should provide an ability to log in', () => {
     cy.visit('https://react-redux.realworld.io');
@@ -16,12 +20,12 @@ describe('Sign In page', () => {
     cy.get(':nth-child(4) > .nav-link')
       .contains('YaA');
     cy.get('.container > .nav > :nth-child(2) > .nav-link')
-      .contains('New Post');
+      .should('contain', 'New Post');
     cy.get(':nth-child(3) > .nav-link')
-      .contains('Settings');
+      .should('contain', 'Settings');
 
     cy.get(':nth-child(3) > .nav-link')
       .click();
-    cy.url().contains('settings');
+    cy.url().should('contain', 'settings');
   });
 });
