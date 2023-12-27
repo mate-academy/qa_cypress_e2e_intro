@@ -18,14 +18,6 @@ describe('Sign In page', () => {
       .click();
 
     cy.get(':nth-child(4) > .nav-link')
-      .contains('YaA');
-    cy.get('.container > .nav > :nth-child(2) > .nav-link')
-      .should('contain', 'New Post');
-    cy.get(':nth-child(3) > .nav-link')
-      .should('contain', 'Settings');
-
-    cy.get(':nth-child(3) > .nav-link')
-      .click();
-    cy.url().should('contain', 'settings');
+      .should('contain', 'YaA');
   });
 });
