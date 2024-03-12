@@ -5,7 +5,7 @@ describe('Sign In page', () => {
   const username = 'Ullamco';
   const password = 'qwert12345';
 
-  it('successfully login', () => {
+  it('should have an ability to log in user', () => {
     cy.visit('https://react-redux.realworld.io/#/login?_k=uny8wd');
     cy.get('[placeholder="Email"]').type(email);
     cy.get('[placeholder="Password"]').type(password);
