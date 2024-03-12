@@ -1,7 +1,5 @@
 /// <reference types="cypress" />
 
-// const { should } = require("chai");
-
 describe('Sign In page', () => {
   it('should provide an ability to log in', () => {
     cy.visit('https://react-redux.realworld.io/#/login');
