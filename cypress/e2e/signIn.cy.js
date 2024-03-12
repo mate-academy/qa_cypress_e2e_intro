@@ -31,6 +31,6 @@ describe('Sign In page', () => {
       .click();
 
     cy.get('.navbar .nav-item')
-      .contains('a', username);
+      .should('contain.text', username);
   });
 });
