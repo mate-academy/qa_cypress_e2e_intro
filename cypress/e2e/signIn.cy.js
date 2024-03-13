@@ -7,8 +7,8 @@ describe('Sign In', () => {
   });
 
   it('should Log in an existing user', () => {
-    cy.get('[placeholder="Email"]').first().type(username + '@gmail.com');
-    cy.get('[placeholder="Password"]').last().type('Aa12345!');
+    cy.get('[placeholder="Email"]').type(username + '@gmail.com');
+    cy.get('[placeholder="Password"]').type('Aa12345!');
     cy.get('[type="submit"]').click();
     cy.get(':nth-child(4) > .nav-link').should('contain.text', username);
     Cypress.on('uncaught:exception', (err, runnable) => {
