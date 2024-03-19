@@ -37,4 +37,3 @@ describe('Sign In page', () => {
      .should('contain.text', 'Libero')
   });
 });
-
