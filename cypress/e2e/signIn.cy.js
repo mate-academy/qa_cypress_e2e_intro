@@ -23,8 +23,13 @@ describe('Sign In page', () => {
      .type('Password@1')
 
     cy.get('button[type="submit"]')
-     .should('exist')
      .click()
+
+    cy.get('[class="navbar navbar-light"]')
+     .last()
+     .should('contain.text', 'Libero')
+  });
+});
 
     cy.get('[class="navbar navbar-light"]')
      .last()
