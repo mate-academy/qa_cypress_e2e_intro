@@ -23,3 +23,18 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('registerNewUser', () => {
+  const randomNumber = Math.random().toString().slice(2);
+  const username = 'AnS_' + randomNumber;
+  const email = username + '@test.ua';
+  const password = '654321';
+
+  cy.request('POST', 'https://conduit.productionready.io/api/users', {
+    user: { username, email, password }
+  }).then((response) => ({ ...response.body.user, password }));
+});
+
+Cypress.Commands.add('getByPlaceholder', (placeholderName) => {
+  cy.get(`[placeholder=${placeholderName}]`);
+});
