@@ -23,3 +23,14 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.overwrite('visit', (originalFn, url, options) => {
+  if (!url.includes('#')) {
+    url = `/#${url}`;
+  }
+  return originalFn(url, options);
+});
+
+Cypress.Commands.add('findByPlaceholder', (value) => {
+  cy.get(`[placeholder=${value}]`);
+});
