@@ -9,6 +9,7 @@ describe('Sign In page', () => {
     const email = 'dtworek@qa.team';
     const passwd = 'dominik1234';
 
+    cy.url().should('include', 'login');
     cy.get('[placeholder = "Email"]').type(email);
     cy.get('[placeholder = "Password"]').type(passwd);
     cy.get('.btn').click();
