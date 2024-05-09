@@ -28,9 +28,6 @@ describe('Sign In page', () => {
 
     cy.get('.btn').click();
 
-    // cy.get('.swal-text').should('contain.text', 'Login was successful');
-    // cy.get('.swal-button').click();
-
     cy.get(':nth-child(4) > .nav-link').should('contain', 'Suzy');
   });
 });
