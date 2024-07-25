@@ -6,7 +6,7 @@ describe('Sign In page', () => {
     cy.get(':nth-child(1) > .form-control').type('User228@gmail.com');
     cy.get(':nth-child(2) > .form-control').type('User228');
     cy.get('.btn').click();
-    cy.get('.nav').contains('User228').should('be.visible');
+    cy.get(':nth-child(4) > .nav-link').should('contain.text', 'User228');
   });
 });
 
