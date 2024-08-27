@@ -1,8 +1,10 @@
-const { defineConfig } = require('cypress');
-
-module.exports = defineConfig({
+module.exports = {
   e2e: {
-    setupNodeEvents(on, config) {
-    }
-  }
-});
+    baseUrl:'https://react-redux.realworld.io/',
+    viewportWidth: 500,
+    viewportHeight: 700,
+        setupNodeEvents(on, config) {
+      // implement node event listeners here
+    },
+  },
+};
