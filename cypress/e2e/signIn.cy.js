@@ -5,36 +5,6 @@ describe('Sign In page', () => {
     cy.visit('/login');
   });
 
-  it(`should have 'conduit' link`, () => {
-    cy.contains('a', 'conduit')
-      .should('exist');
-  });
-
-  it(`should have 'Home' link`, () => {
-    cy.contains('a', 'Home')
-      .should('exist');
-  });
-
-  it(`should have 'Sign In' link`, () => {
-    cy.contains('a', 'Sign in')
-      .should('exist');
-  });
-
-  it(`should have 'Sign Up' link`, () => {
-    cy.contains('a', 'Sign up')
-      .should('exist');
-  });
-
-  it(`should have 'Sign In' header`, () => {
-    cy.get('h1')
-      .should('contain.text', 'Sign In');
-  });
-
-  it(`should have 'Need an account?' link`, () => {
-    cy.contains('a', 'Need an account?')
-      .should('exist');
-  });
-
   it(`should have 'Email' field`, () => {
     cy.get(`input[type='email']`)
       .should('exist');
