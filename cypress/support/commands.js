@@ -55,7 +55,3 @@ Cypress.Commands.add('registerNewUser', () => {
     .should('equal', 200)
     .then(() => user);
 });
-
-// Cypress.Commands.add('getByAlias', (alias) => {
-//   cy.get(`@${alias}`).then((data) => data);
-// });
