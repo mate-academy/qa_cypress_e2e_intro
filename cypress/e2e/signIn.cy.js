@@ -1,25 +1,27 @@
 /// <reference types="cypress" />
 
-describe('Sign In page', () => {
-  beforeEach(() => {
-    cy.visit('/user/login');
+import SignInPage from '../pages/signInPage';
 
-    cy.registerNewUser().then((user) => user).as('user');
+describe('Sign In page', () => {
+  const loginPage = new SignInPage();
+
+  beforeEach(() => {
+    loginPage.visitHomeUrl();
+
+    loginPage.registerNewUser().then((user) => user).as('user');
   });
 
   it('should provide an ability to log in', () => {
-    cy
-      .contains('h1', 'Sign in')
-      .should('exist');
+    loginPage.titleExists();
 
     cy.get('@user').then((user) => {
       const { email, username, password } = user;
-      cy.getByPlaceholder('Email').type(email);
-      cy.getByPlaceholder('Password').type(password);
+      loginPage.typeEmail(email);
+      loginPage.typePassword(password);
 
-      cy.submitFormByButton('Sign in');
+      loginPage.submitSignInForm();
 
-      cy.isUserAuthenticated(username);
+      loginPage.isUserAuthenticated(username);
     });
   });
 });

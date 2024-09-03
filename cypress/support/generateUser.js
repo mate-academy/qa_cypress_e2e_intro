@@ -1,12 +1,14 @@
 import { faker } from '@faker-js/faker';
 
 export const generateUser = () => {
-  const salt = String(Math.random()).slice(2, 6);
+  const randomNumbers = String(Math.random()).slice(2, 6);
+
+  // Username cannot contain a dot "."
   const username = (faker
     .internet
     .userName()
     .toLowerCase()
-  ) + salt;
+  ).replace('.', '') + randomNumbers;
 
   return {
     email: username + '@email.com',
