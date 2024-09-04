@@ -15,5 +15,6 @@ describe('Sign In page', () => {
     cy.get('input[placeholder="Password"]').type(password);
 
     cy.contains('button', 'Sign in').click();
+    cy.contains('a', name)
   });
 });
