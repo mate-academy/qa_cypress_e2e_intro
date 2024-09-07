@@ -23,3 +23,22 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+const { generateUser } = require('./generateUser');
+
+Cypress.Commands.add('findByPlaceholder', (placeholder) => {
+  cy.get(`[placeholder=${placeholder}]`);
+});
+
+Cypress.Commands.add('registerNewUser', () => {
+  const { email, username, password } = generateUser();
+
+  cy.request('POST', '/api/users ', {
+    user: {
+      email,
+      username,
+      password
+    }
+  })
+    .then((response) => ({ ...response.body.user, password }));
+});
