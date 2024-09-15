@@ -23,3 +23,24 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+const { generateNewUser } = require("./generateNewUser")
+
+Cypress.Commands.add('signUp', () => {
+    const { email, username, password } = generateNewUser()
+
+    cy.request('POST', 'https://api.realworld.io/api/users', {
+        "user": {
+            username,
+            email,
+            password
+        }
+    }).then(response => ({
+        ...response.body.user,
+        password
+    }))
+})
+
+Cypress.Commands.add('findByPlaceholder', (name) => {
+    cy.get(`[placeholder="${name}"]`)
+})
