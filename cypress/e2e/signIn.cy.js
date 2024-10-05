@@ -23,6 +23,6 @@ describe('Sign In page', () => {
 
       cy.get(`button[type='submit']`).click();
 
-      cy.contains('khamirez').should('exist');
+      cy.contains('a', 'khamirez').should('exist');
     };
 });
