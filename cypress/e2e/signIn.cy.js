@@ -17,7 +17,7 @@ describe('Sign In page', () => {
       .click();
 
     cy.get('a.nav-link')
-      // eslint-disable-next-line no-undef
-      .should('contain', username);
+      .contains('Test1234')
+      .should('be.visible');
   });
 });
