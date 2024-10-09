@@ -2,15 +2,17 @@
 
 describe('Sign In page', () => {
   it('should provide an ability to log in', () => {
-    cy.visit('https://conduit.mate.academy/');
-    cy.get(':nth-child(2) > .nav-link').click();
-    cy.url().should('contain', '/login');
+    const username = 'try';
+    const email = 'oaao@gmail.com';
+    const password = '1234qaz';
 
-    cy.get(':nth-child(1) > .form-control').type('oaao@gmail.com');
-    cy.get(':nth-child(2) > .form-control').type('1234qaz');
+    cy.visit('https://conduit.mate.academy/login');
+
+    cy.get(':nth-child(1) > .form-control').type(email);
+    cy.get(':nth-child(2) > .form-control').type(password);
 
     cy.get('.btn').click();
 
-    cy.get('.navbar').should('contain', 'try');
+    cy.get('.navbar').should('contain', username);
   });
 });
