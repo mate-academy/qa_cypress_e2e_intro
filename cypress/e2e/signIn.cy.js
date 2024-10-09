@@ -2,24 +2,20 @@
 
 describe('Sign In page', () => {
   it('should provide an ability to log in', () => {
-    cy.visit('https://conduit.mate.academy/user/login');
-
+    cy.visit('https://react-redux.realworld.io/#/login');
     cy.get('h1')
-      .should('contain.text', 'Sign in');
+      .should('contain.text', 'Sign In');
 
-    // email entering
-    cy.get('#email')
+    cy.get('input[placeholder="Email"]') // Email field
       .type('bybeg@mailinator.com');
 
-    // password entering
-    cy.get('#password')
+    cy.get('input[placeholder="Password"]') // Password field
       .type('Pa$$w0rd!');
 
-    cy.get('.btn')
-      .click();
+    cy.get('button[type="submit"]').click(); // Sign In button
 
-    cy.get(':nth-child(4) > .nav-link')
-      .contains('estetvelieaoff')
+    cy.get('a.nav-link')
+      .contains('Estetvelieaoff')
       .should('be.visible');
   });
 });
