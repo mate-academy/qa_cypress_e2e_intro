@@ -1,5 +1,6 @@
 describe('Sign In page', () => {
   beforeEach(() => cy.visit('https://conduit.mate.academy/user/login'));
+  
 
   it('should provide an ability to log in', () => {
     cy.url().should('contain', 'login');
