@@ -8,11 +8,11 @@ describe('Sign In page', () => {
       .should('contain.text', 'Sign in');
 
     // email entering
-    cy.get(':nth-child(1) > .form-control')
+    cy.get('#email')
       .type('bybeg@mailinator.com');
 
     // password entering
-    cy.get(':nth-child(2) > .form-control')
+    cy.get('#password')
       .type('Pa$$w0rd!');
 
     cy.get('.btn')
