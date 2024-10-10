@@ -12,7 +12,7 @@ describe('Sign In page', () => {
     cy.get('input[type="password"]').type('Osan12345');
     cy.get('button[type="submit"]').click();
   });
-  it('should the usernamee "osan" link appeared in the header "', () => {
+  it('should the usernam "osan" link appeared in the header "', () => {
     cy.visit('https://conduit.mate.academy/user/login');
 
     cy.get('input[type="email"]').type('osan12345!@gmail.com');
