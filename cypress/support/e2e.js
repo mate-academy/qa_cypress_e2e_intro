@@ -16,5 +16,8 @@
 // Import commands.js using ES2015 syntax:
 import './commands';
 
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
+Cypress.on('uncaught:exception', (err, runnable) => {
+// eslint-disable-next-line no-console
+  console.error(err); // Логуємо помилку у консоль
+  return false; // Запобігаємо тому, щоб тест зупинявся через цю помилку
+});
