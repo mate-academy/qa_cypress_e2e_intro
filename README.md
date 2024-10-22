@@ -13,8 +13,8 @@
 
 ## Task
 
-App for testing: `https://react-redux.realworld.io`
-Back-up app for testing, if you have any issues with the app above: `https://conduit.mate.academy/`
+App for testing: `https://react-redux.realworld.io`https://conduit.mate.academy/
+Back-up app for testing, if you have any issues with the app above: ``
 
 **Your task** is to automate the next flow:
 
