@@ -1,24 +1,17 @@
 /// <reference types="cypress" />
 
-const logUsername = 'dsarvaaav';
-const email = 'fdsfaasd13as@gmail.com';
+const logUsername = 'dsarqva';
+const email = 'fdsfdas@gmail.com';
 const password = 'dsadfgafsa';
 
-describe('my firs test', () => {
-  it('should', () => {
+describe('Sign In Test', () => {
+  it('should sign in successfully', () => {
     cy.visit('https://conduit.mate.academy/');
-
-    cy.get(':nth-child(3) > .nav-link').click();
-
-    cy.get(':nth-child(1) > .form-control')
-      .type(logUsername);
-
-    cy.get(':nth-child(2) > .form-control')
-      .type(email);
-
-    cy.get(':nth-child(3) > .form-control')
-      .type(password);
-
-    cy.get('.btn').click();
+    cy.get('[data-testid="sign-in-link"]').click();
+    cy.get('[data-testid="username-input"]').type(logUsername);
+    cy.get('[data-testid="email-input"]').type(email);
+    cy.get('[data-testid="password-input"]').type(password);
+    cy.get('[data-testid="submit-button"]').click();
+    cy.url().should('include', '/home');
   });
 });
