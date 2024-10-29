@@ -18,7 +18,7 @@ describe('Sign In page', () => {
     cy.get('.btn[type=submit]')
       .click();
 
-    cy.get('.navbar-nav li:last-child .nav-link')
-      .type('calculatingmodel');
+    cy.get('.navbar-nav')
+      .should('contain.text', 'calculatingmodel');
   });
 });
