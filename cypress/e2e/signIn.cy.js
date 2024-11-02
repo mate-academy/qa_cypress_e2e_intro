@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 beforeEach('My home page', () => {
-  cy.visit('https://conduit.mate.academy/user/login');
+  cy.visit('https://conduit.mate.academy/');
 });
 
 describe('Sign In page', () => {
@@ -17,9 +17,9 @@ describe('Sign In page', () => {
     cy.get('.btn')
       .click();
 
-    cy.contains('a', 'Global Feed')
-      .should('contain.text', 'Global Feed');
+    cy.contains('a', 'denis_ser')
+      .should('contain.text', 'denis_ser');
 
-    cy.url().should('equal', 'https://conduit.mate.academy');
+    cy.url().should('equal', 'https://conduit.mate.academy/');
   });
 });
