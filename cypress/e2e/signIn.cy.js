@@ -12,7 +12,7 @@ describe('Sign In page', () => {
       .type('denis_ser@gmail.com');
 
     cy.get('[placeholder=Password]')
-      .type('1245676');
+      .type('tramadol228syadu');
 
     cy.get('.btn')
       .click();
