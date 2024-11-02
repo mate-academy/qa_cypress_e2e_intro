@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 beforeEach('My home page', () => {
-  cy.visit('https://conduit.mate.academy/');
+  cy.visit('https://conduit.mate.academy/user/login');
 });
 
 describe('Sign In page', () => {
