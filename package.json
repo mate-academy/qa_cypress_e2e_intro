@@ -1,7 +1,8 @@
 {
   "scripts": {
     "prepare": "husky install",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "cypress run --browser chrome"
   },
   "dependencies": {
     "cypress-image-snapshot": "^4.0.1",
@@ -33,6 +34,6 @@
     }
   },
   "lint-staged": {
-    "*.js": "eslint --max-warnings=0"
+    "*.js": "eslint --max-warnings=0 --ignore-pattern 'node_modules/*'"
   }
 }
