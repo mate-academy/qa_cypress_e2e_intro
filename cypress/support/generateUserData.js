@@ -1,6 +1,6 @@
 const { faker } = require('@faker-js/faker');
 
-function generateUserData() {
+export default function generateUserData() {
   const randomNumber = Math.random().toString().slice(2, 8);
   const username = `${faker.internet.userName()}${randomNumber}`;
   const email = faker.internet.email();
@@ -8,5 +8,3 @@ function generateUserData() {
 
   return { username, email, password };
 };
-
-module.exports = { generateUserData };
