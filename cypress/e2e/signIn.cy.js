@@ -8,6 +8,17 @@ describe("Sign In page", () => {
     const email = "bla@gmail.com";
     const password = "BlaBla@007";
     const userName = "maria";
+
+    cy.request({
+      method: "POST",
+      url: "https://conduit.mate.academy/api/users/login",
+      body: {
+        user: {
+          email: email,
+          password: password,
+        },
+      },
+    });
     cy.get("h1").should("contain.text", "Sign in");
 
     cy.get("[placeholder=Email]").type(email);
