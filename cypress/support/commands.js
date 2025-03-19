@@ -1,3 +1,7 @@
+/// <reference types="cypress" />
+
+const { generateUser } = require("./generateUser");
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -23,3 +27,17 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('findByPlaceholder', (placeholder) => {
+  cy.get(`[placeholder=${placeholder}]`);
+});
+
+Cypress.Commands.add('registerNewUser', () => {
+  const user = generateUser();
+
+  cy.request('POST', 'https://conduit.mate.academy/api/users', { user })
+    .then((response) => ({
+      ...response.body.user,
+      ...user,
+    }));
+})
