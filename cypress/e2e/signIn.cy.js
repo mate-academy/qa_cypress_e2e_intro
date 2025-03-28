@@ -1,7 +1,27 @@
 /// <reference types="cypress" />
 
 describe('Sign In page', () => {
-  it('should provide an ability to log in', () => {
+  beforeEach(() => {
+    cy.visit('https://react-redux.realworld.io/#/login');
+  });
 
+  it('should provide an ability to log in', () => {
+    cy.url()
+      .should('include', '/login');
+
+    cy.get('h1.text-xs-center')
+      .should('contain.text', 'Sign In');
+
+    cy.get(':nth-child(1) > .form-control')
+      .type('andruha999@gmail.com');
+
+    cy.get(':nth-child(2) > .form-control')
+      .type('Popapa123');
+
+    cy.contains('.btn', 'Sign in')
+      .click();
+
+    cy.get(':nth-child(4) > .nav-link')
+      .should('contain.text', 'Andruha99');
   });
 });
