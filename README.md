@@ -10,7 +10,7 @@
 1. Check yourself before submitting the task with a [Cypress checklist](https://mate-academy.github.io/qa-program/checklists/cypress.html).
 1. Create a pull request.
 1. Do not forget to click on `Re-request review` if you submit the homework after previous review.
-
+git 
 ## Task
 
 App for testing: `https://react-redux.realworld.io`
