@@ -23,3 +23,35 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+import { generateUser } from './generateUser';
+
+Cypress.Commands.add('getByPlaceholder', (placeholder) => {
+  cy.get(`[placeholder="${placeholder}"]`);
+});
+
+Cypress.Commands.add('getButtonByText', (buttonText) => {
+  return cy.contains('.btn', buttonText);
+});
+
+Cypress.Commands.add('submitFormByButton', (buttonText) => {
+  cy.getButtonByText(buttonText).click();
+});
+
+Cypress.Commands.add('isUserAuthenticated', (username) => {
+  cy
+    .contains('.nav-link', username)
+    .should('exist');
+});
+
+Cypress.Commands.add('registerNewUser', () => {
+  const user = generateUser();
+
+  cy
+    .request('POST', '/api/users', {
+      user
+    })
+    .its('status')
+    .should('equal', 200)
+    .then(() => user);
+});
