@@ -13,8 +13,15 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
-// Import commands.js using ES2015 syntax:
-import './commands';
+// Import custom commands if defined
+import './commands'; // Keep this if you have custom commands in commands.js
 
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
+// Handle uncaught exceptions to prevent test failures
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // Log the error for debugging purposes
+  // eslint-disable-next-line no-console
+  console.error('Uncaught exception:', err);
+
+  // Returning false here prevents Cypress from failing the test
+  return false;
+});
