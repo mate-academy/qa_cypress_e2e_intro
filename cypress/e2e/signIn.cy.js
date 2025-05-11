@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('Registration and Login Test', () => {
+describe('A user registration and Login Test', () => {
   let email;
   let password;
   let username;
