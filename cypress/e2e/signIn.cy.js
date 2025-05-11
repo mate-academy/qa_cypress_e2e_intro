@@ -24,7 +24,7 @@ describe('Registration and Login Test', () => {
       .should('have.text', 'email or password:is invalid');
   });
 
-  it('should do the advanced registration bifore log in ', () => {
+  it('should do log-in with the advanced registration ', () => {
     const randomNumber = Math.random().toString().slice(2);
     username = `test_user_${randomNumber}`;
     email = `${username}@gmail.com`;
@@ -63,5 +63,7 @@ describe('Registration and Login Test', () => {
     cy.get(':nth-child(1) > .form-control').type(Cypress.env('email'));
     cy.get(':nth-child(2) > .form-control').type(Cypress.env('password'));
     cy.get('.btn').click();
+
+    cy.get('a.nav-link').contains('Global Feed');
   });
 });
