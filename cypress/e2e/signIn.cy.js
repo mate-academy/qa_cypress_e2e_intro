@@ -14,6 +14,6 @@ describe('Sign In page', () => {
     
     cy.get('.btn').click();
     
-    cy.contains('a', 'ave7fold');
+    cy.contains('ave7fold').should('be.visible');
   });
 });
