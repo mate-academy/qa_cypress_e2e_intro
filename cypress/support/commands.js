@@ -23,3 +23,22 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+const generateUser = require('./generateUser');
+
+// Створюємо користувача через API
+Cypress.Commands.add('registerNewUser', () => {
+  const { username, email, password } = generateUser();
+
+  return cy.request('POST', 'https://conduit.mate.academy/api/users', {
+    user: { username, email, password }
+  }).then((response) => {
+    expect(response.status).to.eq(200);
+    return { username, email, password };
+  });
+});
+
+// Зручний get за placeholder
+Cypress.Commands.add('getByPlaceholder', (placeholder) => {
+  return cy.get(`[placeholder="${placeholder}"]`);
+});
