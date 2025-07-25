@@ -17,7 +17,7 @@ describe('Sign In page', () => {
         email,
         password
       }
-    });
+    }).its('status').should('eq', 200);
 
     cy.get(':nth-child(2) > .nav-link').click();
 
