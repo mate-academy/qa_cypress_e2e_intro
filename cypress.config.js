@@ -1,8 +1,10 @@
-const { defineConfig } = require('cypress');
+import { defineConfig } from 'cypress';
 
-module.exports = defineConfig({
+export default defineConfig({
   e2e: {
+    baseUrl: 'https://conduit.mate.academy',
     setupNodeEvents(on, config) {
+      // здесь можно добавить node-события при необходимости
     }
   }
 });
