@@ -1,11 +1,30 @@
-<reference types="cypress" />
+/// <reference types="cypress" />
 
 describe('Sign In page', () => {
+  const primaryUrl = 'https://react-redux.realworld.io';
+  const backupUrl = 'https://conduit.mate.academy';
+
+  const email = Cypress.env('email');
+  const password = Cypress.env('password');
+  const expectedUsername = Cypress.env('username');
+
   it('should provide an ability to log in', () => {
-    cy.visit('https://conduit.mate.academy/login');
-    cy.get('input[type="email"]').type('mateacademytestuser@example.com');
-    cy.get('input[type="password"]').type('Qwerty123!');
-    cy.contains('button', 'Sign in').click();
-    cy.get('nav').contains('mateacademytestuser').should('be.visible');
+    cy.request({
+      url: primaryUrl,
+      failOnStatusCode: false
+    }).then((response) => {
+      const baseUrl =
+        response.status === 200 ? primaryUrl : backupUrl;
+
+      cy.log(`Visiting: ${baseUrl}`);
+      cy.visit(`${baseUrl}/login`);
+
+      cy.login(email, password);
+
+      cy.get('nav').within(() => {
+        cy.contains('a', expectedUsername).should('be.visible');
+      });
+    });
   });
 });
+
