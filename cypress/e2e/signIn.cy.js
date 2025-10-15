@@ -4,7 +4,7 @@ describe('Sign In page', () => {
   beforeEach(() => {
     cy.visit('/');
   });
-  it.only('should provide an ability to log in', () => {
+  it('should provide an ability to log in', () => {
     cy.visit('/user/login');
     cy.findByPlaceholder('Email')
       .type(Cypress.env('USER_EMAIL'));
