@@ -5,7 +5,7 @@ describe('Sign In page', () => {
     cy.visit('/');
   });
   it('should provide an ability to log in', () => {
-    cy.visit('/user/login');
+    cy.visit('/user/login'); // this is correct url, '/login' does not exist here
     cy.findByPlaceholder('Email')
       .type(Cypress.env('USER_EMAIL'));
     cy.findByPlaceholder('Password')

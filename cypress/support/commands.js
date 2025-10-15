@@ -74,5 +74,7 @@ Cypress.Commands.add('findByPlaceholder', (text) => {
 // eslint-disable-next-line max-len, no-console
 Cypress.on('uncaught:exception', (err) => { console.error(err); return false; });
 Cypress.Commands.add('assertPageUrl', (url) => {
-  cy.url().should('equal', Cypress.config().baseUrl + url);
+  cy.url()
+    .should('include', url)
+    .should('equal', Cypress.config().baseUrl + url);
 });
