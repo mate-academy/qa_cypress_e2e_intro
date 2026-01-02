@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-const URL = 'https://conduit.mate.academy/';
+const URL = Cypress.env('CYPRESS_URL');
 const email = Cypress.env('CYPRESS_EMAIL');
 const password = Cypress.env('CYPRESS_PASSWORD');
 const userName = Cypress.env('CYPRESS_USER_NAME');
