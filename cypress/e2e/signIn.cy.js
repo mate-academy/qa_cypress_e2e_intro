@@ -4,7 +4,7 @@ const { generateUser } = require('../support/generateUser');
 
 describe('Sign In page', () => {
   beforeEach(() => {
-    cy.visit('/user/login');
+    cy.visit('/#/login');
   });
 
   it('should provide an ability to log in', () => {
@@ -26,7 +26,7 @@ describe('Sign In page', () => {
 
     cy.get('button').should('contain.text', 'Sign in').click();
 
-    cy.url().should('equal', Cypress.config().baseUrl + '/');
+    cy.url().should('include', '#/');
 
     cy.get('.nav-link').contains(userName);
   });
