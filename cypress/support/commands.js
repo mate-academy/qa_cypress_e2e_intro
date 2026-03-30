@@ -23,3 +23,19 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+/// <reference types='cypress' />
+
+const { generateUser } = require('./generateUser');
+
+Cypress.Commands.add('registerNewUser', () => {
+  const { username, email, password } = generateUser();
+
+  cy.request('POST', 'https://conduit.mate.academy/api/users', {
+    user: {
+      username,
+      email,
+      password
+    }
+  }).then((response) => ({ ...response.body, password }));
+});
