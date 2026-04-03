@@ -4,16 +4,14 @@ describe('Sign In page', () => {
   it('should provide an ability to log in', () => {
     cy.visit('https://conduit.mate.academy/#/login');
 
-    cy.get('input[type="email"]')
-      .type('your@email.com');
+    cy.get('.auth-page').should('be.visible');
 
-    cy.get('input[type="password"]')
-      .type('yourPassword');
+    cy.get('input[placeholder="Email"]').type('your@email.com');
 
-    cy.get('button[type="submit"]')
-      .click();
+    cy.get('input[placeholder="Password"]').type('yourPassword');
 
-    cy.get('.navbar')
-      .should('contain', 'yourUsername');
+    cy.get('button[type="submit"]').click();
+
+    cy.get('.navbar').should('contain', 'yourUsername');
   });
 });
