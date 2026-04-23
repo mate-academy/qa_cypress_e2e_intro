@@ -2,7 +2,7 @@
 
 describe('Sign In page', () => {
   it('should provide an ability to log in', () => {
-    const userEmail = 'qwerty';
+    const userEmail = 'qwerty@gmail.com';
     const userPassword = '123';
 
     cy.visit('https://conduit.mate.academy/');
@@ -13,7 +13,7 @@ describe('Sign In page', () => {
 
     cy.get('button').contains('Sign in').click();
 
-    cy.contains('a', '123', { timeout: 10000 })
+    cy.contains('a', 'qwerty', { timeout: 10000 })
       .should('be.visible');
   });
 });
