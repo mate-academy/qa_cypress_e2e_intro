@@ -2,14 +2,14 @@
 
 describe('Sign In page', () => {
   it('should provide an ability to log in', () => {
-    const userEmail = '123@gmail.com';
+    const userEmail = 'qwerty';
     const userPassword = '123';
 
     cy.visit('https://conduit.mate.academy/');
     cy.contains('.nav-link', 'Sign in').click();
 
-    cy.get('input[type="Email"]').type(userEmail);
-    cy.get('input[type="Password"]').type(userPassword);
+    cy.get('input[type="email"]').type(userEmail);
+    cy.get('input[type="password"]').type(userPassword);
 
     cy.get('button').contains('Sign in').click();
 
