@@ -2,10 +2,18 @@
 
 describe('Sign In page', () => {
   it('should provide an ability to log in', () => {
-    cy.visit('https://conduit.mate.academy/#/login');
-    cy.get('input[placeholder="Email"]').type('your_email@example.com');
-    cy.get('input[placeholder="Password"]').type('your_password');
-    cy.get('button[type="submit"]').click();
-    cy.get('.navbar').should('contain', 'your_username');
+    const userEmail = '123@gmail.com';
+    const userPassword = '123';
+
+    cy.visit('https://conduit.mate.academy/');
+    cy.contains('.nav-link', 'Sign in').click();
+
+    cy.get('input[type="Email"]').type(userEmail);
+    cy.get('input[type="Password"]').type(userPassword);
+
+    cy.get('button').contains('Sign in').click();
+
+    cy.contains('a', '123', { timeout: 10000 })
+      .should('be.visible');
   });
 });
