@@ -2,8 +2,9 @@
 
 describe('Sign In page', () => {
   it('should provide an ability to log in', () => {
-    const userEmail = 'qwerty@gmail.com';
+    const userEmail = '123qwerty@gmail.com';
     const userPassword = '123';
+    const userName = 'qwerty';
 
     cy.visit('https://conduit.mate.academy/');
     cy.contains('.nav-link', 'Sign in').click();
@@ -13,7 +14,7 @@ describe('Sign In page', () => {
 
     cy.get('button').contains('Sign in').click();
 
-    cy.contains('a', 'qwerty', { timeout: 10000 })
+    cy.contains('a', userName, { timeout: 10000 })
       .should('be.visible');
   });
 });
