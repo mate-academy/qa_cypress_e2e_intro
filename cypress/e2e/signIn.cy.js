@@ -9,6 +9,6 @@ describe("Sign In page", () => {
 
     cy.contains("button", "Sign in").click();
 
-    cy.get(".navbar").contains("a", "aakash1sadhu").should("be.visible");
+    cy.get(".navbar").contains("a", "aakashsadhu").should("be.visible");
   });
 });
