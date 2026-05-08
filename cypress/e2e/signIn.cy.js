@@ -7,11 +7,13 @@ describe('Sign In page', () => {
 
     cy.contains('.nav-link', 'Sign in').click();
 
-    cy.get('[placeholder=Email]').type('yuratestuse1234r@gmail.com');
+    cy.get('[placeholder=Email]').should('exist');
+    cy.get('[placeholder=Password]').should('exist');
+    cy.get('[placeholder=Email]').type('yuratest1234@gmail.com');
     cy.get('[placeholder=Password]').type('123456789');
 
     cy.contains('.btn', 'Sign in').click();
 
-    cy.contains('.nav-link', 'yuratestuser1234').should('exist');
+    cy.contains('.nav-link', 'yuratest1234').should('exist');
   });
 });
