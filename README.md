@@ -22,3 +22,21 @@ Back-up app for testing, if you have any issues with the app above: `https://con
 1. Fill in email and password fields as valid data.
 1. Click on [Sign In] button.
 1. Assert your username appeared in "Site navigation (Header)" menu.
+
+## Test configuration
+
+The Cypress test uses the Mate Conduit backup app by default and public demo
+credentials. You can override the target app or credentials with environment
+variables:
+
+```bash
+CYPRESS_BASE_URL=https://react-redux.realworld.io \
+CYPRESS_EMAIL=your@email.com \
+CYPRESS_PASSWORD=your-password \
+CYPRESS_USERNAME=your-username \
+npm test
+```
+
+On PowerShell, set the variables with `$env:NAME = 'value'` before running
+`npm test`.
+
