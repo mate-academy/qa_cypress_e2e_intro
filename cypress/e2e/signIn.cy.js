@@ -2,24 +2,39 @@
 
 describe('Sign In page', () => {
   it('should provide an ability to log in', () => {
-    const email = Cypress.env('EMAIL');
-    const password = Cypress.env('PASSWORD');
-    const username = Cypress.env('USERNAME');
+    const uniqueId = Date.now();
+    const username = `qa${uniqueId}`;
+    const email = `qa${uniqueId}@mail.com`;
+    const password = 'asdf1234';
+
+    cy.request('POST', '/api/users', {
+      user: {
+        username,
+        email,
+        password
+      }
+    });
+
+    cy.clearCookies();
 
     cy.intercept('POST', '**/users/login').as('loginRequest');
 
-    cy.visit('/#/login');
+    cy.visit('/user/login');
 
-    cy.get('input[type="email"]').should('be.visible');
-    cy.get('input[type="email"]').clear();
-    cy.get('input[type="email"]').type(email);
+    const emailSelector =
+      'input[placeholder="Email"], input[type="email"]';
+    const passwordSelector =
+      'input[placeholder="Password"], input[type="password"]';
 
-    cy.get('input[type="password"]').should('be.visible');
-    cy.get('input[type="password"]').clear();
-    cy.get('input[type="password"]').type(password);
+    cy.get(emailSelector).should('be.visible');
+    cy.get(emailSelector).clear();
+    cy.get(emailSelector).type(email);
 
-    cy.get('form')
-      .find('button[type="submit"]')
+    cy.get(passwordSelector).should('be.visible');
+    cy.get(passwordSelector).clear();
+    cy.get(passwordSelector).type(password);
+
+    cy.contains('button', 'Sign in')
       .should('be.visible')
       .and('be.enabled')
       .click();
