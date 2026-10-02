@@ -1,4 +1,13 @@
 // ***********************************************
+Cypress.Commands.add('registerUser', (user) => {
+  return cy.request({
+    method: 'POST',
+    url: 'https://conduit.mate.academy/api/users',
+    body: { user },
+    log: false
+  }).its('status').should('eq', 200);
+});
+
 // This example commands.js shows you how to
 // create various custom commands and overwrite
 // existing commands.
